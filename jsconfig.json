@@ -1,0 +1,14 @@
+{
+    "note": "配置vscode 识别webpack的alias路径",
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@": [
+                "src"
+            ],
+            "@/*": [
+                "src/*"
+            ]
+        }
+    }
+}

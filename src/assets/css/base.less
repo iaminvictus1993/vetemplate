@@ -1,0 +1,104 @@
+@charset 'utf-8';
+.change(@background,@color){
+    .layout-container {
+            background: @background !important;
+    }
+    .el-table, .el-dialog, .el-input__inner, {
+        background: @background !important;
+        color: @color !important; 
+    }
+    .el-checkbox, .el-select__input, .el-range-editor .el-range__icon, .el-range-editor .el-range-separator, .el-range-editor input, .el-switch__label, .el-form-item__label, .el-table__header-wrapper thead div, .el-table__footer-wrapper thead div {
+        color: @color !important; 
+    }
+    .lrm-container .a, #pie, #pie2, #bar{
+        background: rgba(0, 0, 0, 0.5) !important;
+    }
+    
+    .flagClass {
+        .el-submenu .el-menu {
+            background-color: @color !important;
+        }
+    }
+    .el-switch__label.is-active {
+        color: #409EFF !important;
+    }
+    .el-tree {
+        cursor: default;
+        border: 1px solid #d1dbe5;
+        overflow: auto;
+        max-height: 500px;
+        /*max-width: 150px;*/
+        border-radius: 5px;
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .25);
+        background: white;
+        color: black;
+        min-height: 100px;
+    }
+
+    .el-pagination button.disabled {
+        background-color: transparent;
+        cursor: not-allowed;
+    }
+
+    .el-pagination .btn-prev,
+    .el-pagination .btn-next {
+        background: center center no-repeat;
+        background-size: 16px;
+        background-color: transparent;
+        cursor: pointer;
+        margin: 0;
+        color: @color;
+    }
+    .el-pager {
+        .number {
+            color: @color;
+        }
+        li.active {
+            color: #409EFF;
+        }
+    }
+    .pagigation {
+        .el-pagination__total {
+            color: @color;
+        }
+    }
+    .el-input-group__append, .el-textarea.is-disabled .el-textarea__inner {
+        color: @color;
+    }
+    .el-table__footer-wrapper tbody td, .el-table__header-wrapper tbody td, .el-textarea__inner, .el-radio-button__inner, .el-pager li {
+        color: @color;
+    }
+    .el-input-number__decrease, .el-input-number__increase, .el-cascader__label, .el-cascader__label span{
+        color: @color;
+    }
+    .el-cascader {
+        input::-webkit-input-placeholder {
+            color: @color !important;
+        }
+        input:-moz-placeholder {
+            color: @color !important;
+        }
+        input::-moz-placeholder {
+            color: @color !important;
+        }
+        input:-ms-input-placeholder {
+            color: @color !important;
+        }
+    }
+    .el-tag--primary {
+        color: @color;
+    }
+    .el-table__fixed, .el-table__fixed-right {
+        background: rgb(204, 204, 204);
+        .cell {
+            color: @color;
+        }
+    }
+    .el-radio-button__orig-radio:checked+.el-radio-button__inner {
+        color: @color;
+        background-color: transparent;
+        border-color: #bfcbd9; 
+        -webkit-box-shadow: -1px 0 0 0 transparent;
+        box-shadow: -1px 0 0 0 transparent;
+    }
+}

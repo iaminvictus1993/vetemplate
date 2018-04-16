@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+/*
+	vue router transition css
+*/
+.fade-enter-active,
+.fade-leave-active {
+    transition: all .3s ease
+}
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+
+.zomOut-enter-active,
+.zomOut-leave-active {
+    transition: all .3s ease
+}
+
+
+/*
+  计划模板页面tree动画
+*/
+
+.zomOut-enter,
+.zomOut-leave-active {
+    opacity: 0;
+    transform: scale3d(.3, .3, .3);
+}
+
+/*zoomin 动画*/
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+    50% {
+        opacity: 1;
+    }
+}
+.zoomIn {
+    animation: zoomIn 0.3s;
+}
+
