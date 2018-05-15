@@ -137,6 +137,7 @@
 }
 .el-table__fixed, .el-table__fixed-right {
     background: #374755;
+    z-index: 2;
     .cell {
         color: white;
     }
@@ -146,7 +147,9 @@
 .el-row {
     height: 100%;
 }
-
+.el-tree--highlight-current .el-tree-node.is-current>.el-tree-node__content {
+    background-color: rgba(0, 0, 0, 0.2);
+}
 
 
 .displayNone {
@@ -183,8 +186,8 @@
 
 /*重写分页样式*/
 
-.el-pagination button.disabled {
-    background-color: transparent;
+.el-pagination button.disabled, .el-pagination button:disabled {
+    background-color: transparent !important;
     cursor: not-allowed;
 }
 
@@ -230,7 +233,9 @@
     /*修改*/
     background-color: transparent;
 }
-
+.ab-button {
+    vertical-align: top;
+}
 .el-table__header-wrapper thead div,
 .el-table__footer-wrapper thead div {
     /*  background-color: rgb(238, 241, 246);
@@ -240,7 +245,6 @@
     background-color: transparent;
     color: white;
 }
-
 .el-table__body tr.current-row>td {
     background-color: rgba(0, 0, 0, .2);
 }
@@ -319,8 +323,15 @@
     cursor: not-allowed;
 }
 
-.el-tag--primary {
+.el-tag--primary, .el-table__column-filter-trigger i {
     color: white
+}
+.el-tag {
+    overflow: hidden;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .el-autocomplete,
