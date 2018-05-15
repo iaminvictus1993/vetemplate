@@ -42,8 +42,8 @@ export default {
 .dropContainer {
     position: absolute;
     color: white;
-    top: 2vh;
-    left: 40vh;
+    top: 20px;
+    left: 300px;
     .wrapper {
         display: inline;
         color: white;

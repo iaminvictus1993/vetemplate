@@ -1,6 +1,6 @@
 <template>
     <div style="height:100%">
-        <div :class="['container', !isCollapse?'donghua':'']" :style="{width:!isCollapse?'300px':'70px'}">
+        <div :class="['container', !isCollapse?'donghua':'']" :style="{width:!isCollapse?'230px':'70px'}">
             <el-menu @mouseenter.native="hanlerCollapse" :unique-opened="true" :router="false" :default-active="$route.path" :background-color="asideBgColor" text-color="#fff" :collapse="isCollapse">
                 <template v-for="(item, index) in menues">
                     <!-- 渲染首页 -->
@@ -16,9 +16,9 @@
                             <span slot="title">{{item.menuItemName}}</span>
                         </template>
                         <!-- 若routes.js中设置meta.groups则分组 -->
-                        <div v-if="item.meta.groups.length">
+                        <!-- <div v-if="item.meta.groups.length">
                             <el-menu-item-group v-for="(groupItem, groupIndex) in item.meta.groups" :key="groupIndex">
-                                <!-- <template slot="title">{{groupItem}}</template> -->
+                                <template slot="title">{{groupItem}}</template>
                                 <template v-for="(subitem, subindex) in item.children">
                                     <router-link v-if="subitem.meta.group===groupItem" :to="item.menuItemPath+'/'+subitem.path" :key="subindex">
                                         <el-menu-item :index="item.menuItemPath+'/'+subitem.path">
@@ -28,18 +28,18 @@
                                     </router-link>
                                 </template>
                             </el-menu-item-group>
-                        </div>
-                        <div v-if="!item.meta.groups || !item.meta.groups.length">
-                            <template v-for="(subitem, subindex) in item.children">
-                                <router-link :to="item.menuItemPath+'/'+subitem.path" :key="subindex">
-                                    <el-menu-item :index="item.menuItemPath+'/'+subitem.path">
-                                        <i :class="subitem.meta.icon"></i>
-                                        <span slot="title">{{subitem.meta.mark}}</span>
-                                    </el-menu-item>
-                                </router-link>
+                        </div> -->
+                        <!-- <div v-if="!item.meta.groups || !item.meta.groups.length"> -->
+                        <template v-for="(subitem, subindex) in item.children">
+                            <router-link :to="item.menuItemPath+'/'+subitem.path" :key="subindex">
+                                <el-menu-item :index="item.menuItemPath+'/'+subitem.path">
+                                    <i :class="subitem.meta.icon"></i>
+                                    <span slot="title">{{subitem.meta.mark}}</span>
+                                </el-menu-item>
+                            </router-link>
 
-                            </template>
-                        </div>
+                        </template>
+                        <!-- </div> -->
                     </el-submenu>
                 </template>
             </el-menu>
@@ -53,7 +53,7 @@ import routes from '@/router/routes.js'
 export default {
     data() {
         return {
-            asideBgColor: 'rgba(0,0,0,.5)'
+            asideBgColor: '#222d32'
         }
     },
     props: {
@@ -67,14 +67,14 @@ export default {
         if (this.theme === 'style0') {
             this.asideBgColor = 'black'
         } else {
-            this.asideBgColor = 'rgba(0,0,0,.5)'
+            this.asideBgColor = '#222d32'
         }
         const self = this
         this.bus.$on('set-theme', function(id) {
             if (id === 'style0') {
                 self.asideBgColor = 'black'
             } else {
-                self.asideBgColor = 'rgba(0,0,0,.5)'
+                self.asideBgColor = '#222d32'
             }
         })
     },
@@ -110,17 +110,29 @@ export default {
 <style lang='less' scoped>
 .container {
     position: fixed;
-    height: 94vh;
+    bottom: 0;
+    top: 56px;
     overflow: hidden;
 }
+
 .el-menu {
-    min-height: 94vh;
+    // min-height: 94vh;
     border: none;
     height: 100%;
-    width: 318px;
+    width: 248px;
     overflow-y: scroll;
     overflow-x: hidden;
-    z-index: 6666;
+    .el-menu-item {
+        i {
+            color: white;
+        }
+        background-color: #2c3b41 !important;
+        &:hover {
+            span {
+                color: #409eff;
+            }
+        }
+    }
 }
 .donghua {
     transition: width 1s;

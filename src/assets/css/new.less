@@ -1,0 +1,135 @@
+@fontColor: black;
+
+// 搜索框
+.input-with-search {
+    width: 300px;
+    float: right;        
+}
+
+// 面包屑样式
+.breadcrumb {
+    display: inline-block;
+    margin-left: 15px;
+    position: relative;
+    top: 4px;
+    .el-breadcrumb {
+        font-size: 17px;
+        .redirect {
+            .el-breadcrumb__inner {
+                color: white !important;
+                cursor: pointer;
+            }
+        }
+        .noRedirect {
+            .el-breadcrumb__inner {
+                color: white !important;
+                cursor: text;
+            }
+        }
+    }
+}
+
+/*重写分页样式*/
+
+.pagigation {
+    text-align: right;
+    margin-top: 6px;
+    // .el-pagination__total {
+        // color: white;
+    // }
+    .el-pagination {
+        .el-select .el-input .el-input__inner {
+            padding-right: 25px;
+            border-radius: 3px;
+            height: 28px;
+            line-height: 28px;
+        }
+        .btn-prev,.btn-next {
+            background: center center no-repeat;
+            background-size: 16px;
+            background-color: transparent;
+            cursor: pointer;
+            margin: 0;
+            // color: white;
+        }
+        button:disabled, button.disabled {
+            background-color: transparent !important;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.el-table {
+    margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid rgb(223, 230, 236);
+    font-size: 14px;
+    color: @fontColor;
+    border-radius: 5px;
+    th {
+        color: @fontColor;
+    }
+}
+
+.el-tree {
+    cursor: default;
+    background: #fff;
+    overflow: auto;
+    max-height: 500px;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .25);
+    min-height: 100px;
+    .el-tree-node.is-expanded>.el-tree-node__children {
+        display: inline;
+    }
+    .el-tree-node__content:hover,
+    .el-tree-node:focus>.el-tree-node__content, .el-tree-node__content:hover {
+        background-color: rgba(0, 0, 0, .2);
+    }
+}
+
+
+// form各项输入框宽度100%
+.el-date-editor--daterange.el-input, .el-date-editor--daterange.el-input__inner, .el-date-editor--timerange.el-input, .el-date-editor--timerange.el-input__inner,
+.el-autocomplete,
+.el-dropdown,
+.detai .el-cascader,
+.el-select,
+.el-date,
+.el-date-editor.el-input {
+    width: 100%
+}
+
+// tag内容过长省略
+.el-tag {
+    overflow: hidden;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// 树形选择的确认button
+.ab-button {
+    vertical-align: top;
+}
+
+// 级联placeholder字体颜色
+.el-cascader {
+    input::-webkit-input-placeholder {
+        color: @fontColor !important;
+    }
+    input:-moz-placeholder {
+        color: @fontColor !important;
+    }
+    input::-moz-placeholder {
+        color: @fontColor !important;
+    }
+    input:-ms-input-placeholder {
+        color: @fontColor !important;
+    }
+}

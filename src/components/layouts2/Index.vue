@@ -1,7 +1,7 @@
 <template>
     <div class="layout-container">
         <el-container>
-            <el-header class="layout-header" height="6vh">
+            <el-header class="layout-header" height="56px">
                 <Header :isCollapse.sync="isCollapse"></Header>
             </el-header>
             <el-container class="layout-main">
@@ -34,21 +34,28 @@ export default {
 </script>
 <style lang='less' scoped>
 .layout-container {
-    background: url(../../assets/img/blur-bg.jpg) no-repeat fixed;
-    background-size: cover;
     .layout-main {
-        min-height: 94vh;
         .content-margin {
             margin-left: 64px;
         }
         .aside {
-            min-width: 300px;
-            // position: fixed;
+            min-width: 230px;
+        }
+        .el-main {
+            width: 100%;
         }
     }
 }
-.el-main {
-    float: right;
-    flex: 1;
+.el-container {
+    .el-header {
+        padding: 0;
+    }
+    .el-aside {
+        float: left;
+    }
+    .el-main {
+        float: right;
+        flex: 1;
+    }
 }
 </style>
